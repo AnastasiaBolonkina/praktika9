@@ -1,0 +1,26 @@
+def find(s, x):
+    l = 0
+    r = len(s)-1
+    while l <= r:
+        m = (l+ r)//2
+        if s[m] == x:
+            return m
+        if s[m] < x:
+            l = m + 1
+        elif s[m] > x:
+            r = m - 1
+    return False
+from random import randint
+s = []
+k = 1
+m = int(input('How many: '))
+while k <= m:
+    s.append(randint(-10, 10))
+    k += 1
+s.sort()
+print (s)
+x = int(input('Which one: '))
+print(find(s, x))
+import time 
+start_time = time.time()
+print("--- %s seconds ---" % (time.time() - start_time))
