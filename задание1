@@ -1,0 +1,20 @@
+def find(s, x):
+    for y in range(0, len(s)):
+        if s[y] == x:
+            return y + 1
+        else:
+            return "Unable to find it"
+from random import randint
+s = []
+a = 1
+m = int(input('How much: '))
+while a <= m:
+    s.append(randint(-10, 10))
+    a += 1
+s.sort()
+print (s)
+x = int(input('Which one: '))
+print(find(s, x))
+import time 
+start_time = time.time()
+print("--- %s seconds ---" % (time.time() - start_time))
